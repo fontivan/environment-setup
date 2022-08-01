@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=WebCord
+Comment=WebCord Client
+GenericName=WebCord
+Exec=/opt/appimages/webcord-latest.appimage
+Type=Application
+StartupNotify=false
+StartupWMClass=WebCord

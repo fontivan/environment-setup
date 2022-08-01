@@ -7,11 +7,10 @@
 ./05-dnf.sh
 ./06-snap.sh
 ./07-flatpak.sh
-./08-webcord.sh
-./09-appimage.sh
-./10-gpu-driver.sh
-./11-icons.sh
-./12-rnnoise.sh
-./13-pipewire.sh
+./08-appimage.sh
+./09-gpu-driver.sh
+./10-icons.sh
+./11-rnnoise.sh
+./12-pipewire.sh
 
 ../common/install.sh
