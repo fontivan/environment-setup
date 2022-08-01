@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=CurseForge (Wayland)
+Comment=CurseForge Addons
+GenericName=CurseForge
+Exec=/opt/appimages/curseforge-latest.appimage --ozone-platform=wayland --ozone-platform-hint=auto --enable-features=UseOzonePlatform,WaylandWindowDecorations
+Type=Application
+StartupNotify=false
+StartupWMClass=CurseForge
