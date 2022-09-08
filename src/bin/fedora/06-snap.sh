@@ -2,5 +2,4 @@
 
 # Install snaps
 sudo snap install \
-    "authy" \
-    "spotify"
+    "authy"

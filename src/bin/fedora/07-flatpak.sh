@@ -9,5 +9,6 @@ sudo flatpak update -y
 # Install flatpaks
 sudo flatpak install flathub \
     "com.axosoft.GitKraken" \
+    "com.discordapp.Discord" \
     "com.jetbrains.IntelliJ-IDEA-Community" \
-    "com.discordapp.Discord"
+    "com.spotify.Client"

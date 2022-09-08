@@ -2,7 +2,7 @@
 Name=WebCord
 Comment=WebCord Client
 GenericName=WebCord
-Exec=/opt/appimages/webcord-latest.appimage
+Exec=/opt/appimages/webcord-latest.appimage --ozone-platform=wayland --ozone-platform-hint=auto --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebRTCPipeWireCapturer 
 Type=Application
 StartupNotify=false
 StartupWMClass=WebCord
