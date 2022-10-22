@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=CurseForge
+Comment=CurseForge Addons
+GenericName=CurseForge
+Exec=/opt/appimages/curseforge-latest.appimage
+Type=Application
+StartupNotify=false
+StartupWMClass=CurseForge
