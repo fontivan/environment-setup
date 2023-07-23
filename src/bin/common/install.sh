@@ -5,3 +5,4 @@
 ./03-zsh.sh
 ./04-gogh.sh
 ./05-rust.sh
+./06-openai.sh
