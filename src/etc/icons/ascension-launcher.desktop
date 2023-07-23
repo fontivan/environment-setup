@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Ascension
+Comment=Ascension Launcher
+GenericName=Ascension
+Exec=/opt/appimages/ascension-launcher-latest.appimage
+Type=Application
+StartupNotify=false
+StartupWMClass=Ascension

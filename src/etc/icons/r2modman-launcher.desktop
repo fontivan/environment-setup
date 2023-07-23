@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=R2modman
+Comment=R2modman Launcher
+GenericName=R2modman
+Exec=/opt/appimages/r2modman-latest.appimage
+Type=Application
+StartupNotify=false
+StartupWMClass=R2modman

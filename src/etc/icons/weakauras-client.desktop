@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Weakauras
+Comment=Weakauras Launcher
+GenericName=Weakauras
+Exec=/opt/appimages/weakauras-client-latest.appimage
+Type=Application
+StartupNotify=false
+StartupWMClass=Weakauras
