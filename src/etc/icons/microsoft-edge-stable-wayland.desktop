@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Microsoft Edge (Wayland)
+Exec=/usr/bin/microsoft-edge-stable --enable-features=UseOzonePlatform --ozone-platform=wayland %U
+Icon=/usr/share/icons/hicolor/128x128/apps/microsoft-edge.png
+Type=Application
+Categories=Network;WebBrowser;

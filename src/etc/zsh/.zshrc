@@ -106,4 +106,8 @@ source $ZSH/oh-my-zsh.sh
 NEWLINE=$'\n'
 PROMPT="[%D{%I:%M:%S}] %n@%M {%d} ${NEWLINE}$> "
 
-source /home/$(whoami)/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "/home/$(whoami)/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+export OPENAI_KEY=~/.config/open-ai/open-ai-api-key.txt
+
+export PATH="/usr/lib64/ccache:/home/$(whoami)/.cargo/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/var/lib/snapd/snap/bin"
