@@ -120,7 +120,7 @@ binary_paths=(
     "/usr/lib64/ccache"
 )
 
-# Only export the paths that exist
+# Loop over all the paths in the array above
 for binary_path in "${binary_paths[@]}"; do
     # Only export paths that exist
     if [[ -d "${binary_path}" ]];
