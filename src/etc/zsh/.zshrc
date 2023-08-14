@@ -110,4 +110,24 @@ source "/home/$(whoami)/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-sy
 
 export OPENAI_API_KEY_PATH=~/.config/open-ai/open-ai-api-key.txt
 
-export PATH="/usr/lib64/ccache:/home/$(whoami)/.cargo/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/var/lib/snapd/snap/bin"
+
+# A set of commons paths that will be useful to have on $PATH
+binary_paths=(
+    "/home/$(whoami)/go/bin"
+    "/home/$(whoami)/.cargo/bin"
+    "/home/$(whoami)/.local/bin"
+    "/home/$(whoami)/bin"
+    "/var/lib/snapd/snapbin"
+    "/usr/lib64/ccache"
+)
+
+# Only export the paths that exist
+for binary_path in "${binary_paths[@]}"; do
+    # Only export paths that exist
+    if [[ -d "${binary_path}" ]];
+    then
+        PATH="${PATH}:${binary_path}"
+    fi
+done
+
+export PATH
