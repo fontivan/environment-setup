@@ -54,7 +54,7 @@ sudo curl -L -o /opt/appimages/ascension-launcher-latest.appimage https://downlo
 sudo curl -L -o /opt/appimages/weakauras-client-latest.appimage https://github.com/WeakAuras/WeakAuras-Companion/releases/download/v${WEAKAURAS_VERSION}/WeakAuras-Companion-${WEAKAURAS_VERSION}.AppImage
 
 # wootility
-sudo curl -L -o /opt/appimages.wootility.appimage https://s3.eu-west-2.amazonaws.com/wooting-update/wootility-lekker-linux-latest/wootility-lekker-${WOOTILITY_VERSION}.AppImage
+sudo curl -L -o /opt/appimages/wootility.appimage https://s3.eu-west-2.amazonaws.com/wooting-update/wootility-lekker-linux-latest/wootility-lekker-${WOOTILITY_VERSION}.AppImage
 
 # Set chmod for all appimages
 sudo chmod +x /opt/appimages/*.appimage
