@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=RuneLite
-Comment=RuneLite Client
-GenericName=RuneLite
-Exec=/opt/appimages/runelite-latest.appimage
-Type=Application
-StartupNotify=false
-StartupWMClass=RuneLite

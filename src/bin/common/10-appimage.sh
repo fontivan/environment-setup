@@ -30,9 +30,6 @@ sudo mkdir -p /opt/appimages
 # Warcraft logs client
 sudo curl -L -o /opt/appimages/warcraftlogs-latest.appimage https://github.com/RPGLogs/Uploaders-warcraftlogs/releases/download/v${WARCRAFTLOGS_VERSION}/Warcraft-Logs-Uploader-${WARCRAFTLOGS_VERSION}.AppImage
 
-# RuneLite client
-sudo curl -L -o /opt/appimages/runelite-latest.appimage https://github.com/runelite/launcher/releases/download/${RUNELITE_VERSION}/RuneLite.AppImage
-
 # Webcord client
 sudo curl -L -o /opt/appimages/webcord-latest.appimage https://github.com/SpacingBat3/WebCord/releases/download/v${WEBCORD_VERSION}/WebCord-${WEBCORD_VERSION}-x64.AppImage
 

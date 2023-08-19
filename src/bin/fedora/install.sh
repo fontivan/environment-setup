@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 
-./01-fusion-free-repo.sh
-./02-fusion-nonfree-repo.sh
-./03-vscode-repo.sh
-./04-insync-repo.sh
-./05-dnf.sh
-./06-snap.sh
-./07-flatpak.sh
-./08-appimage.sh
-./09-gpu-driver.sh
-./10-icons.sh
-./11-rnnoise.sh
-./12-pipewire.sh
+DIR="$( cd "$( dirname "$0" )" && pwd )"
 
-../common/install.sh
+$DIR/../common/install.sh
+
+$DIR/01-fusion-free-repo.sh
+$DIR/02-fusion-nonfree-repo.sh
+$DIR/03-vscode-repo.sh
+$DIR/04-insync-repo.sh
+$DIR/05-dnf.sh
+$DIR/06-snap.sh
+$DIR/07-gpu-driver.sh
+$DIR/08-icons.sh
+$DIR/09-pipewire.sh

@@ -11,4 +11,5 @@ sudo flatpak install flathub \
     "com.axosoft.GitKraken" \
     "com.discordapp.Discord" \
     "com.jetbrains.IntelliJ-IDEA-Community" \
-    "com.spotify.Client"
+    "com.spotify.Client" \
+    "net.lutris.Lutris

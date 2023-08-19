@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+DIR="$( cd "$( dirname "$0" )" && pwd )"
+
 # Rename gnome terminal to "default"
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$(gsettings get org.gnome.Terminal.ProfilesList default | sed "s/'//g")/ visible-name 'Default'
 
@@ -13,8 +15,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Copy shell rc to home folder
-cp ../../etc/bash/.bashrc /home/$(whoami)/.bashrc
-cp ../../etc/zsh/.zshrc /home/$(whoami)/.zshrc
+cp $DIR/../../etc/bash/.bashrc /home/$(whoami)/.bashrc
+cp $DIR/../../etc/zsh/.zshrc /home/$(whoami)/.zshrc
 
 # Set default shell to zsh
 chsh -s $(which zsh)
