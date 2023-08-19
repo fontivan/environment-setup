@@ -12,4 +12,4 @@ sudo flatpak install flathub \
     "com.discordapp.Discord" \
     "com.jetbrains.IntelliJ-IDEA-Community" \
     "com.spotify.Client" \
-    "net.lutris.Lutris
+    "net.lutris.Lutris"
