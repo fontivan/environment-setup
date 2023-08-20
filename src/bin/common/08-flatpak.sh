@@ -14,4 +14,5 @@ sudo flatpak install -y flathub \
     "com.jetbrains.IntelliJ-IDEA-Community" \
     "com.spotify.Client" \
     "net.davidotek.pupgui2" \
-    "net.lutris.Lutris"
+    "net.lutris.Lutris" \
+    "org.freedesktop.Platform.VulkanLayer.MangoHud//22.08"
