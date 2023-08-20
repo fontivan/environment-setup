@@ -13,3 +13,4 @@ $DIR/08-flatpak.sh
 $DIR/09-snap.sh
 $DIR/10-appimage.sh
 $DIR/11-rnnoise.sh
+$DIR/12-gnome-extensions.sh
