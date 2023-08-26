@@ -3,14 +3,18 @@
 # Check for NVIDIA gpu
 if [[ $(lspci | grep 'NVIDIA' | grep 'VGA' | wc -l) -gt 0 ]]
 then
-    sudo dnf install akmod-nvidia -y
-    sudo dnf install xorg-x11-drv-nvidia-cuda -y
+    sudo dnf install -y \
+        "akmod-nvidia" \
+        "nvidia-settings" \
+        "nvidia-vaapi-driver" \
+        "xorg-x11-drv-nvidia-cuda" \
+        "xorg-x11-drv-nvidia-power"
 
     # Install wayland suspend workarounds
     (
         cd /tmp
         git clone https://github.com/fontivan/fedora-wayland-nvidia-suspend-fix.git
-        ./fedora-wayland-nvidia-suspend-fix/src/fedora-wayland-nvidia-suspend-fix.sh i
+        sudo ./fedora-wayland-nvidia-suspend-fix/src/fedora-wayland-nvidia-suspend-fix.sh i
         rm -rf ./fedora-wayland-nvidia-suspend-fix/
     )
 fi

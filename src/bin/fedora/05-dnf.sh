@@ -21,6 +21,7 @@ sudo dnf install -y \
     "dnf-plugins-core" \
     "expect" \
     "freetype.i686" \
+    "gamescope" \
     "gnome-tweaks" \
     "gnutls.i686" \
     "htop" \
