@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 
 # versions
-CURSEFORGE_VERSION="latest"
-WARCRAFTLOGS_VERSION="6.0.2"
-RUNELITE_VERSION="2.6.7"
-WEBCORD_VERSION="4.3.0"
+WARCRAFTLOGS_VERSION="8.2.2"
+RUNELITE_VERSION="2.6.12"
+WEBCORD_VERSION="4.6.1"
 ASCENSION_VERSION="113"
-RTWOMODMAN_VERSION="3.1.42"
-WEAKAURAS_VERSION="5.0.1"
-WOOTILITY_VERSION="4.5.5"
+RTWOMODMAN_VERSION="3.1.46"
+WEAKAURAS_VERSION="5.2.2"
+WOOTILITY_VERSION="4.6.10"
+
+CURSEFORGE_VERSION="latest"
+YUBICO_MANAGER_VERSION="latest"
 
 # Install appimages
 sudo mkdir -p /opt/appimages
@@ -55,6 +57,9 @@ sudo curl -L -o /opt/appimages/weakauras-client-latest.appimage https://github.c
 
 # wootility
 sudo curl -L -o /opt/appimages/wootility.appimage https://s3.eu-west-2.amazonaws.com/wooting-update/wootility-lekker-linux-latest/wootility-lekker-${WOOTILITY_VERSION}.AppImage
+
+# yubico manager
+sudo curl -L -o /opt/appimages/yubico-manager-latest.appimage https://developers.yubico.com/yubikey-manager-qt/Releases/yubikey-manager-qt-${YUBICO_MANAGER_VERSION}-linux.AppImage
 
 # Set chmod for all appimages
 sudo chmod +x /opt/appimages/*.appimage

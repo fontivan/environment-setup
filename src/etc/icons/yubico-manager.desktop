@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Yubico Manager
+Comment=Yubico Manager
+GenericName=Yubico Manager
+Exec=/opt/appimages/yubico-manager-latest.appimage
+Icon=/opt/yubico-authenticator/linux_support/com.yubico.yubioath.png
+Type=Application
+StartupNotify=false
+StartupWMClass=Yubico
