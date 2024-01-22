@@ -5,8 +5,8 @@ if [[ $(lspci | grep 'NVIDIA' | grep 'VGA' | wc -l) -gt 0 ]]
 then
     sudo dnf install -y \
         "akmod-nvidia" \
+        "libva-nvidia-driver" \
         "nvidia-settings" \
-        "nvidia-vaapi-driver" \
         "xorg-x11-drv-nvidia-cuda" \
         "xorg-x11-drv-nvidia-power"
 
