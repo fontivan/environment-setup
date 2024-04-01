@@ -1,1 +1,1 @@
-0 1 * * 0 root /usr/bin/clamdscan --multiscan --fdpass /
+0 1 * * 0 root /usr/bin/clamdscan --multiscan --stream /
