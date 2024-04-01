@@ -2,7 +2,9 @@
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
-sudo dnf install clamav clamd clamav-freshclam
+sudo dnf install -y clamav clamd clamav-freshclam
+
+sudo cp $DIR/../../etc/clam/clamdscan.cron /etc/cron.d/clamdscan
 
 sudo systemctl daemon-reload
 
