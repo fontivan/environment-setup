@@ -13,3 +13,4 @@ $DIR/06-snap.sh
 $DIR/07-gpu-driver.sh
 $DIR/08-icons.sh
 $DIR/09-pipewire.sh
+$DIR/10-clam.sh
