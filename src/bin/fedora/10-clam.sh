@@ -15,4 +15,5 @@ sudo systemctl enable clamd@scan
 sudo systemctl start clamd@scan
 
 sudo setsebool antivirus_can_scan_system on
-sudo setsebool antivirus_can_use_jit on
+sudo setsebool antivirus_use_jit on
+
