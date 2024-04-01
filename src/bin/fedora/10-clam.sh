@@ -4,8 +4,6 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 sudo dnf install clamav clamd clamav-freshclam
 
-sudo cp $DIR/../../etc/clam/clamd.service /etc/systemd/system/clamd.service
-
 sudo systemctl daemon-reload
 
 sudo systemctl enable clamav-freshclam
