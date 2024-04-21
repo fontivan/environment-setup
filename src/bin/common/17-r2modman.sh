@@ -10,10 +10,11 @@ PARENT_PATH="/opt/appimages"
 APPIMAGE_PATH="${PARENT_PATH}/r2modman-latest.appimage"
 
 # Prep parent folder
-if [[ ! -d "${PARENT_PATH}" ]];
-then
+if [[ ! -d "${PARENT_PATH}" ]]; then
     mkdir -p "${PARENT_PATH}"
 fi
+
+URL="https://gcdn.thunderstore.io/live/repository/packages/ebkr-r2modman-${RTWOMODMAN_VERSION}.zip"
 
 # r2modman launcher
 (
@@ -21,11 +22,11 @@ fi
         rm -rf /tmp/r2modman
     fi
     mkdir -p /tmp/r2modman
-    cd /tmp/r2modman
-    sudo curl -L -o r2modman-latest.zip https://gcdn.thunderstore.io/live/repository/packages/ebkr-r2modman-${RTWOMODMAN_VERSION}.zip
+    cd /tmp/r2modman || exit
+    sudo curl -L -o r2modman-latest.zip "${URL}"
     unzip r2modman-latest.zip
     sudo mv r2modman-*.AppImage "${APPIMAGE_PATH}"
-    cd /tmp
+    cd /tmp || exit
     rm -rf /tmp/r2modman
 )
 

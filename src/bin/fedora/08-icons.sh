@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-DIR="$( cd "$( dirname "$0" )" && pwd )"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 # Install desktop icons
-cp $DIR/../../etc/icons/*.desktop /home/$(whoami)/.local/share/applications
+cp "${SCRIPT_DIR}"/../../etc/icons/*.desktop \
+    "/home/$(whoami)/.local/share/applications"

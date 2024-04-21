@@ -6,7 +6,7 @@ YUBICO_AUTHENTICATOR="yubico-authenticator"
 TARBALL="${YUBICO_AUTHENTICATOR}.tar.gz"
 
 (
-    cd /tmp
+    cd /tmp || exit
 
     curl -L -o "${TARBALL}" "${YUBICO_AUTHENTICATOR_URL}"
     mkdir -p "${YUBICO_AUTHENTICATOR}"

@@ -21,7 +21,6 @@ VSCODE_EXTENSIONS=(
     vscjava.vscode-maven
 )
 
-for EXTENSION in ${VSCODE_EXTENSIONS[@]};
-do
-    code --install-extension $EXTENSION
+for EXTENSION in "${VSCODE_EXTENSIONS[@]}"; do
+    code --install-extension "${EXTENSION}"
 done

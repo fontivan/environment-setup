@@ -10,13 +10,14 @@ PARENT_PATH="/opt/appimages"
 APPIMAGE_PATH="${PARENT_PATH}/webcord-latest.appimage"
 
 # Prep parent folder
-if [[ ! -d "${PARENT_PATH}" ]];
-then
+if [[ ! -d "${PARENT_PATH}" ]]; then
     mkdir -p "${PARENT_PATH}"
 fi
 
+URL="https://github.com/SpacingBat3/WebCord/releases/download/v${WEBCORD_VERSION}/WebCord-${WEBCORD_VERSION}-x64.AppImage"
+
 # Webcord client
-sudo curl -L -o "${APPIMAGE_PATH}" https://github.com/SpacingBat3/WebCord/releases/download/v${WEBCORD_VERSION}/WebCord-${WEBCORD_VERSION}-x64.AppImage
+sudo curl -L -o "${APPIMAGE_PATH}" "${URL}"
 
 # Set permissions
 sudo chown root:root "${APPIMAGE_PATH}"
