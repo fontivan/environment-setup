@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-DIR="$( cd "$( dirname "$0" )" && pwd )"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 sudo dnf install -y clamav clamd clamav-freshclam
 
-sudo cp $DIR/../../etc/clam/clamdscan.cron /etc/cron.d/clamdscan
-sudo cp $DIR/../../etc/clam/scan.conf /etc/clamd.d/scan.conf
-sudo cp $DIR/../../etc/clam/freshclam.conf /etc/freshclam.conf
+sudo cp "${SCRIPT_DIR}/../../etc/clam/clamdscan.cron" "/etc/cron.d/clamdscan"
+sudo cp "${SCRIPT_DIR}/../../etc/clam/scan.conf" "/etc/clamd.d/scan.conf"
+sudo cp "${SCRIPT_DIR}/../../etc/clam/freshclam.conf" "/etc/freshclam.conf"
 
 sudo systemctl daemon-reload
 

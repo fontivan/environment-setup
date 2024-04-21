@@ -10,21 +10,19 @@ EXTENSIONS_LIST=(
     "reboottouefiubaygd.com.v13.shell-extension"
 )
 
-if [[ -d "${TMP_EXTENSION_DIR}" ]];
-then
+if [[ -d "${TMP_EXTENSION_DIR}" ]]; then
     rm -rf "${TMP_EXTENSION_DIR}"
 fi
 
 mkdir -p "${TMP_EXTENSION_DIR}"
-cd "${TMP_EXTENSION_DIR}"
+cd "${TMP_EXTENSION_DIR}" || exit
 
-for EXTENSION in ${EXTENSIONS_LIST[@]};
-do
+for EXTENSION in "${EXTENSIONS_LIST[@]}"; do
     curl "${URL_PREFIX}/${EXTENSION}.zip" -o "${EXTENSION}.zip"
     unzip "${EXTENSION}.zip" -d "${EXTENSION}"
     rm "${EXTENSION}.zip"
-    UUID="$(cat ${EXTENSION}/metadata.json | jq .uuid  | sed 's/\"//g')"
-    cp -R "${EXTENSION}" ${EXTENSION_DIR}/${UUID}
+    UUID="$(jq .uuid < "${EXTENSION}/metadata.json" | sed 's/\"//g')"
+    cp -R "${EXTENSION}" "${EXTENSION_DIR}/${UUID}"
     gnome-extensions enable "${UUID}"
 done
 
