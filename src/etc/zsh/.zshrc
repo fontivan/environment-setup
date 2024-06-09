@@ -108,8 +108,6 @@ PROMPT="[%D{%I:%M:%S}] %n@%M {%d} ${NEWLINE}$> "
 
 source "/home/$(whoami)/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-export OPENAI_API_KEY_PATH=~/.config/open-ai/open-ai-api-key.txt
-
 # A set of commons paths that will be useful to have on $PATH
 binary_paths=(
     "/home/$(whoami)/go/bin"
