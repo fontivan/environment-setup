@@ -11,14 +11,6 @@ if [[ $(lspci | grep 'NVIDIA' | grep -c 'VGA') -gt 0 ]]; then
         "nvidia-settings" \
         "xorg-x11-drv-nvidia-cuda" \
         "xorg-x11-drv-nvidia-power"
-
-    # Install wayland suspend workarounds
-    (
-        cd /tmp || exit
-        git clone "${URL}"
-        sudo "${SCRIPT}" i
-        rm -rf ./fedora-wayland-nvidia-suspend-fix/
-    )
 fi
 
 # Check for AMD gpu

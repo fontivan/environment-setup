@@ -17,7 +17,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 "${SCRIPT_DIR}"/13-curseforge.sh
 "${SCRIPT_DIR}"/14-wcl.sh
 "${SCRIPT_DIR}"/15-ascension.sh
-"${SCRIPT_DIR}"/16-webcord.sh
+"${SCRIPT_DIR}"/16-wowup.sh
 "${SCRIPT_DIR}"/17-r2modman.sh
 "${SCRIPT_DIR}"/18-weakauras.sh
 "${SCRIPT_DIR}"/19-wootility.sh

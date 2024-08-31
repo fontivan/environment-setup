@@ -24,7 +24,10 @@ URL="https://curseforge.overwolf.com/downloads/curseforge-${CURSEFORGE_VERSION}-
     mkdir -p /tmp/curseforge
     cd /tmp/curseforge || exit
     sudo curl -L -o curseforge-latest.zip "${URL}"
-    PACKAGE=$(unzip curseforge-latest.zip | grep inflating | awk -F '/' '{print $2}' | tr -d '[:space:]')
+    PACKAGE=$(unzip curseforge-latest.zip | \
+        grep inflating | \
+        awk -F '/' '{print $2}' | \
+        tr -d '[:space:]')
     sudo mv "build/${PACKAGE}" "${APPIMAGE_PATH}"
     cd /tmp || exit
     rm -rf /tmp/curseforge

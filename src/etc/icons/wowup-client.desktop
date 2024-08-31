@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=WoWUP
+Comment=WoWUP Client
+GenericName=WoWUP
+Exec=/opt/appimages/wowup-client-latest.appimage
+Type=Application
+StartupNotify=false
+StartupWMClass=WoWUP
