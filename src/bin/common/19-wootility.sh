@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 # Version
-WOOTILITY_VERSION="4.6.15"
+WOOTILITY_VERSION="4.6.21"
 
 # Parent Path
 PARENT_PATH="/opt/appimages"
 
 # Appimage path
-APPIMAGE_PATH="${PARENT_PATH}/wootility.appimage"
+APPIMAGE_PATH="${PARENT_PATH}/wootility-latest.appimage"
 
 # Prep parent folder
 if [[ ! -d "${PARENT_PATH}" ]]; then

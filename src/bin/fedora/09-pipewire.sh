@@ -2,13 +2,13 @@
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-# Install pipewire configuration and systemd service to run it automatically
-mkdir -p ~/.config/pipewire ~/.config/systemd/user
-cp "${SCRIPT_DIR}/../../etc/pipewire/pipewire-input-filter-chain.conf" \
-    "${HOME}/.config/pipewire/"
-cp "${SCRIPT_DIR}/../../etc/pipewire/pipewire-input-filter-chain.service" \
-    "${HOME}/.config/systemd/user/"
-sed -i "s/placeholderusername/$(whoami)/" \
-    "${HOME}/.config/systemd/user/pipewire-input-filter-chain.service"
+# Install pipewire configuration into the conf.d folder and restart pipewire service
+PIPEWIRE_CONF_DIR="${HOME}/.config/pipewire/pipewire.conf.d/"
+DENOISING_FILE="99-input-denoising.conf"
+
+mkdir -p "${PIPEWIRE_CONF_DIR}"
+cp "${SCRIPT_DIR}/../../etc/pipewire/${DENOISING_FILE}" \
+    "${PIPEWIRE_CONF_DIR}/${DENOISING_FILE}"
+
 systemctl daemon-reload --user
-systemctl enable --user --now pipewire-input-filter-chain.service
+systemctl restart --user pipewire.service

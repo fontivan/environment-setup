@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
 
 # Version
-WEBCORD_VERSION="4.8.0"
+WOWUP_VERSION="2.20.0"
 
 # Parent Path
 PARENT_PATH="/opt/appimages"
 
 # Appimage path
-APPIMAGE_PATH="${PARENT_PATH}/webcord-latest.appimage"
+APPIMAGE_PATH="${PARENT_PATH}/wowup-client-latest.appimage"
 
 # Prep parent folder
 if [[ ! -d "${PARENT_PATH}" ]]; then
     mkdir -p "${PARENT_PATH}"
 fi
 
-URL="https://github.com/SpacingBat3/WebCord/releases/download/v${WEBCORD_VERSION}/WebCord-${WEBCORD_VERSION}-x64.AppImage"
+URL="https://github.com/WowUp/WowUp.CF/releases/download/v${WOWUP_VERSION}/WowUp-CF-${WOWUP_VERSION}.AppImage"
 
-# Webcord client
+# Weakauras client
 sudo curl -L -o "${APPIMAGE_PATH}" "${URL}"
 
 # Set permissions

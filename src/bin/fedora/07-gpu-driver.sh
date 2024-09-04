@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-URL="https://github.com/fontivan/fedora-wayland-nvidia-suspend-fix.git"
-SCRIPT="./fedora-wayland-nvidia-suspend-fix/src/fedora-wayland-nvidia-suspend-fix.sh"
-
 # Check for NVIDIA gpu
 if [[ $(lspci | grep 'NVIDIA' | grep -c 'VGA') -gt 0 ]]; then
     sudo dnf install -y \
@@ -11,14 +8,6 @@ if [[ $(lspci | grep 'NVIDIA' | grep -c 'VGA') -gt 0 ]]; then
         "nvidia-settings" \
         "xorg-x11-drv-nvidia-cuda" \
         "xorg-x11-drv-nvidia-power"
-
-    # Install wayland suspend workarounds
-    (
-        cd /tmp || exit
-        git clone "${URL}"
-        sudo "${SCRIPT}" i
-        rm -rf ./fedora-wayland-nvidia-suspend-fix/
-    )
 fi
 
 # Check for AMD gpu

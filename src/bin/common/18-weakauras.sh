@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Version
-WEAKAURAS_VERSION="5.2.3"
+WEAKAURAS_VERSION="5.2.4"
 
 # Parent Path
 PARENT_PATH="/opt/appimages"
@@ -14,7 +14,7 @@ if [[ ! -d "${PARENT_PATH}" ]]; then
     mkdir -p "${PARENT_PATH}"
 fi
 
-URL="https://github.com/WeakAuras/WeakAuras-Companion/releases/download/v${WEAKAURAS_VERSION}\/WeakAuras-Companion-${WEAKAURAS_VERSION}.AppImage"
+URL="https://github.com/WeakAuras/WeakAuras-Companion/releases/download/v${WEAKAURAS_VERSION}/WeakAuras-Companion-${WEAKAURAS_VERSION}.AppImage"
 
 # Weakauras client
 sudo curl -L -o "${APPIMAGE_PATH}" "${URL}"
