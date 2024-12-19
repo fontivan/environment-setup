@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Version
-ASCENSION_VERSION="135"
+ASCENSION_VERSION="142"
 
 # Parent Path
 PARENT_PATH="/opt/appimages"

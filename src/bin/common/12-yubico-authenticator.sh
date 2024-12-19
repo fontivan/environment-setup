@@ -16,7 +16,8 @@ TARBALL="${YUBICO_AUTHENTICATOR}.tar.gz"
     sudo chown -R root:root "${YUBICO_AUTHENTICATOR}"
     sudo chmod +rx "/tmp/${YUBICO_AUTHENTICATOR}/desktop_integration.sh"
     sudo chmod +rx "/tmp/${YUBICO_AUTHENTICATOR}/authenticator"
-    sudo mv "/tmp/${YUBICO_AUTHENTICATOR}" /opt/
+    sudo mkdir -p "/opt/${YUBICO_AUTHENTICATOR}"
+    sudo cp -R "/tmp/${YUBICO_AUTHENTICATOR}/*" "/opt/${YUBICO_AUTHENTICATOR}/"
 
     /opt/${YUBICO_AUTHENTICATOR}/desktop_integration.sh --install
 )

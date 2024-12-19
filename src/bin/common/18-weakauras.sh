@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Version
-WEAKAURAS_VERSION="5.2.4"
+WEAKAURAS_VERSION="5.2.7"
 
 # Parent Path
 PARENT_PATH="/opt/appimages"

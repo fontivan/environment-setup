@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Version
-RTWOMODMAN_VERSION="3.1.47"
+RTWOMODMAN_VERSION="3.1.54"
 
 # Parent Path
 PARENT_PATH="/opt/appimages"

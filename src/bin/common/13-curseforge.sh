@@ -36,3 +36,7 @@ URL="https://curseforge.overwolf.com/downloads/curseforge-${CURSEFORGE_VERSION}-
 # Set permissions
 sudo chown root:root "${APPIMAGE_PATH}"
 sudo chmod 755 "${APPIMAGE_PATH}"
+
+# Set login auth redirect
+xdg-mime default curseforge.desktop x-scheme-handler/cfauth
+sudo update-desktop-database ~/.local/share/applications

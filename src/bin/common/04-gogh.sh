@@ -4,14 +4,21 @@
 # clone the repo into "$HOME/src/gogh"
 URL="https://github.com/Mayccoll/Gogh.git"
 (
-    INSTALL_DIR="${HOME}/git/github"
-    mkdir -p "${INSTALL_DIR}"
-    cd "${INSTALL_DIR}" || exit
-    git clone "${URL}" gogh
-    cd gogh/themes || exit
+    # Clone the repo into "$HOME/src/gogh"
+    mkdir -p "$HOME/src"
+    cd "$HOME/src"
+    git clone https://github.com/Gogh-Co/Gogh.git gogh
+    cd gogh
 
-    # necessary on ubuntu
+    # necessary in the Gnome terminal on ubuntu
     export TERMINAL=gnome-terminal
+
+    # necessary in the Alacritty terminal
+    pip install -r requirements.txt
+    export TERMINAL=alacritty
+
+    # Enter theme installs dir
+    cd installs
 
     # install themes
     zsh ./aci.sh
