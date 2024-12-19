@@ -13,4 +13,4 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 "${SCRIPT_DIR}"/07-gpu-driver.sh
 "${SCRIPT_DIR}"/08-icons.sh
 "${SCRIPT_DIR}"/09-pipewire.sh
-"${SCRIPT_DIR}"/10-clam.sh
+"${SCRIPT_DIR}"/11-clam.sh

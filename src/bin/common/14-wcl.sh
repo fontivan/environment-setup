@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Version
-WARCRAFTLOGS_VERSION="8.13.4"
+WARCRAFTLOGS_VERSION="8.15.4"
 
 # Parent Path
 PARENT_PATH="/opt/appimages"

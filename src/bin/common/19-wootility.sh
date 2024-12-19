@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Version
-WOOTILITY_VERSION="4.6.21"
+WOOTILITY_VERSION="4.7.2"
 
 # Parent Path
 PARENT_PATH="/opt/appimages"
