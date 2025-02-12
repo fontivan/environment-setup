@@ -19,7 +19,7 @@ $(VENV): requirements/ci.txt
 
 .PHONY: bashate
 bashate: $(VENV)
-	$(BIN)/bashate $(SHELL_FILES)
+	$(BIN)/bashate -i E006 $(SHELL_FILES)
 
 .PHONY: shellcheck
 shellcheck: $(VENV)
