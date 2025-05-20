@@ -25,6 +25,7 @@ URL="https://curseforge.overwolf.com/downloads/curseforge-${CURSEFORGE_VERSION}-
     cd /tmp/curseforge || exit
     sudo curl -L -o curseforge-latest.zip "${URL}"
     unzip curseforge-latest.zip
+    # shellcheck disable=SC2010
     PACKAGE=$(ls | grep 'CurseForge')
     sudo mv "${PACKAGE}" "${APPIMAGE_PATH}"
     cd /tmp || exit
