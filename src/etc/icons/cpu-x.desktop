@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=CPU-X
+Comment=CPU-X
+GenericName=CPU-X
+Exec=/opt/appimages/cpu-x-latest.appimage
+Type=Application
+StartupNotify=false
+StartupWMClass=CPU-X
