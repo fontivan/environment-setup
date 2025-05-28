@@ -2,7 +2,7 @@
 
 # Install oc and kubectl
 mkdir -p /tmp/oc/
-curl -o /tmp/oc/oc.tar.gz -L https://mirror.openshift.com/pub/openshift-v4/clients/oc/latest/linux/oc.tar.gz && \
+curl -o /tmp/oc/oc.tar.gz -L https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/openshift-client-linux.tar.gz && \
 tar -xvf /tmp/oc/oc.tar.gz -C /tmp/oc && \
 sudo mv /tmp/oc/oc /usr/local/bin/oc && \
 sudo chmod +x /usr/local/bin/oc && \
