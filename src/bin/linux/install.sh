@@ -3,11 +3,9 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 "${SCRIPT_DIR}"/01-hostname.sh
-"${SCRIPT_DIR}"/02-vscode.sh
 "${SCRIPT_DIR}"/03-zsh.sh
 "${SCRIPT_DIR}"/05-rust.sh
 "${SCRIPT_DIR}"/06-ollama.sh
-"${SCRIPT_DIR}"/07-sanitize.sh
 "${SCRIPT_DIR}"/08-flatpak.sh
 "${SCRIPT_DIR}"/09-snap.sh
 "${SCRIPT_DIR}"/10-rnnoise.sh
@@ -21,3 +19,10 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 "${SCRIPT_DIR}"/18-weakauras.sh
 "${SCRIPT_DIR}"/19-wootility.sh
 "${SCRIPT_DIR}"/20-yubico.sh
+"${SCRIPT_DIR}"/21-exiled-exchange.sh
+"${SCRIPT_DIR}"/22-cpu-x.sh
+"${SCRIPT_DIR}"/30-openshift-cli.sh
+"${SCRIPT_DIR}"/31-opm.sh
+"${SCRIPT_DIR}"/32-kustomize.sh
+"${SCRIPT_DIR}"/../common/01-sanitize.sh
+"${SCRIPT_DIR}"/../common/02-rust.sh

@@ -1,8 +1,18 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Default values for linux
+HOME_DIR="/home/$(whoami)"
+PLUGINS=(git colored-man-pages colorize pip python)
+
+# Fallback values for macos
+if [[ "$(uname)" == "Darwin" ]]; then
+    HOME_DIR="/Users/$(whoami)"
+    PLUGINS=(git colored-man-pages colorize pip python brew osx)
+fi
+
 # Path to your oh-my-zsh installation.
-export ZSH="/home/$(whoami)/.oh-my-zsh"
+export ZSH="${HOME_DIR}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -70,10 +80,8 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-    git
-    zsh-autosuggestions
-)
+# shellcheck disable=SC2034
+plugins=$(${PLUGINS})
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,14 +114,14 @@ source $ZSH/oh-my-zsh.sh
 NEWLINE=$'\n'
 PROMPT="[%D{%I:%M:%S}] %n@%M {%d} ${NEWLINE}$> "
 
-source "/home/$(whoami)/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "${HOME_DIR}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # A set of commons paths that will be useful to have on $PATH
 binary_paths=(
-    "/home/$(whoami)/go/bin"
-    "/home/$(whoami)/.cargo/bin"
-    "/home/$(whoami)/.local/bin"
-    "/home/$(whoami)/bin"
+    "${HOME_DIR}/go/bin"
+    "${HOME_DIR}/.cargo/bin"
+    "${HOME_DIR}/.local/bin"
+    "${HOME_DIR}/bin"
     "/var/lib/snapd/snapbin"
     "/usr/lib64/ccache"
 )
