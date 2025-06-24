@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
-brew install \
+/opt/homebrew/bin/brew install \
     coreutils \
     findutils \
+    htop \
     gawk \
     gnu-getopt \
     gnu-indent \
@@ -17,6 +18,8 @@ brew install \
     node \
     npm \
     openshift-cli \
+    oras \
+    pinentry-mac \
     podman \
     podman-desktop \
     qemu \
