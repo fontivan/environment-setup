@@ -4,6 +4,7 @@
 /opt/homebrew/bin/brew install \
     coreutils \
     findutils \
+    htop \
     gawk \
     gnu-getopt \
     gnu-indent \
@@ -17,6 +18,7 @@
     node \
     npm \
     openshift-cli \
+    oras \
     pinentry-mac \
     podman \
     podman-desktop \
