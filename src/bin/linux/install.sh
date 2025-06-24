@@ -23,6 +23,6 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 "${SCRIPT_DIR}"/22-cpu-x.sh
 "${SCRIPT_DIR}"/30-openshift-cli.sh
 "${SCRIPT_DIR}"/31-opm.sh
-"${SCRIPT_DIR}"/32-kustomize.sh
 "${SCRIPT_DIR}"/../common/01-sanitize.sh
 "${SCRIPT_DIR}"/../common/02-rust.sh
+"${SCRIPT_DIR}"/../common/03-kustomize.sh

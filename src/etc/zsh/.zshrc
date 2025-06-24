@@ -3,12 +3,28 @@
 
 # Default values for linux
 HOME_DIR="/home/$(whoami)"
-PLUGINS=(git colored-man-pages colorize pip python)
+PLUGINS=(
+    "git"
+    "colorize"
+    "pip"
+    "python"
+    "zsh-autosuggestions"
+    "zsh-syntax-highlighting"
+)
 
 # Fallback values for macos
 if [[ "$(uname)" == "Darwin" ]]; then
     HOME_DIR="/Users/$(whoami)"
-    PLUGINS=(git colored-man-pages colorize pip python brew osx)
+    PLUGINS=(
+        "brew"
+        "macos"
+        ${PLUGINS}
+    )
+fi
+
+# Fallback values for conntainers
+if [[ $(whoami) == 'root' ]]; then
+    HOME_DIR="/root"
 fi
 
 # Path to your oh-my-zsh installation.
@@ -81,7 +97,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # shellcheck disable=SC2034
-plugins=$(${PLUGINS})
+plugins=(${PLUGINS[@]})
 
 source $ZSH/oh-my-zsh.sh
 
