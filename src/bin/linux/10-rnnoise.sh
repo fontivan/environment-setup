@@ -24,3 +24,7 @@ RNNOISE_PATH="/opt/linux-rnnoise"
     rm -f linux-rnnoise.zip
     rm -rf "${TMP_PATH}"
 )
+
+# Create symlink for pipewire 1.6.x
+# https://gitlab.freedesktop.org/pipewire/pipewire/-/commit/8fd798208777f502a3bd86b02b07a24397792f3f
+sudo ln -s "${RNNOISE_PATH}/ladspa/librnnoise_ladspa.so" "/usr/lib64/ladspa/librnnoise_ladspa.so"
