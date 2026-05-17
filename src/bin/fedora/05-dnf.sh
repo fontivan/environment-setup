@@ -9,14 +9,17 @@ sudo dnf upgrade -y
 # Autoremove
 sudo dnf autoremove -y
 
+# Enable Chrome repository
+sudo dnf config-manager setopt google-chrome.enabled=1
+
 # Install groups
 sudo dnf -y groupinstall "Development Tools"
 
 # Install packages
 sudo dnf install -y \
     "code" \
-    "cronie" \
     "cronie-anacron" \
+    "cronie" \
     "dbus-libs.i686" \
     "dnf-plugins-core" \
     "expect" \
@@ -24,6 +27,7 @@ sudo dnf install -y \
     "gamescope" \
     "gnome-tweaks" \
     "gnutls.i686" \
+    "google-chrome-stable" \
     "htop" \
     "insync" \
     "ladspa" \
