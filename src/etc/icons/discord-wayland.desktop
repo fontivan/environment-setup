@@ -6,3 +6,4 @@ Exec=flatpak run com.discordapp.Discord --ignore-gpu-blocklist --disable-feature
 Type=Application
 StartupNotify=false
 StartupWMClass=Discord
+Icon=com.discordapp.Discord
