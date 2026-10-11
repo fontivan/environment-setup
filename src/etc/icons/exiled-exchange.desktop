@@ -2,7 +2,7 @@
 Name=ExiledExchange
 Comment=Exiled Exchange 2 Client
 GenericName=ExiledExchange
-Exec=/opt/appimages/exiled-exchange-2-latest.appimage --no-sandbox
+Exec=@HOME@/appimages/exiled-exchange-2-latest.appimage --no-sandbox
 Type=Application
 StartupNotify=false
 StartupWMClass=ExiledExchange

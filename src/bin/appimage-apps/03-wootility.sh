@@ -4,7 +4,7 @@
 WOOTILITY_VERSION="4.7.2"
 
 # Parent Path
-PARENT_PATH="/opt/appimages"
+PARENT_PATH="/home/${USER}/appimages"
 
 # Appimage path
 APPIMAGE_PATH="${PARENT_PATH}/wootility-latest.appimage"
@@ -20,5 +20,5 @@ URL="https://s3.eu-west-2.amazonaws.com/wooting-update/wootility-lekker-linux-la
 sudo curl -L -o "${APPIMAGE_PATH}" "${URL}"
 
 # Set permissions
-sudo chown root:root "${APPIMAGE_PATH}"
+sudo chown "${USER}:${USER}" "${APPIMAGE_PATH}"
 sudo chmod 755 "${APPIMAGE_PATH}"

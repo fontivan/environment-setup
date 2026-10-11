@@ -2,7 +2,7 @@
 Name=WoWUP
 Comment=WoWUP Client
 GenericName=WoWUP
-Exec=/opt/appimages/wowup-client-latest.appimage
+Exec=@HOME@/appimages/wowup-client-latest.appimage
 Type=Application
 StartupNotify=false
 StartupWMClass=WoWUP

@@ -4,7 +4,7 @@
 RTWOMODMAN_VERSION="3.1.54"
 
 # Parent Path
-PARENT_PATH="/opt/appimages"
+PARENT_PATH="/home/${USER}/appimages"
 
 # Appimage path
 APPIMAGE_PATH="${PARENT_PATH}/r2modman-latest.appimage"
@@ -31,5 +31,5 @@ URL="https://gcdn.thunderstore.io/live/repository/packages/ebkr-r2modman-${RTWOM
 )
 
 # Set permissions
-sudo chown root:root "${APPIMAGE_PATH}"
+sudo chown "${USER}:${USER}" "${APPIMAGE_PATH}"
 sudo chmod 755 "${APPIMAGE_PATH}"

@@ -4,7 +4,7 @@
 WOWUP_VERSION="2.20.0"
 
 # Parent Path
-PARENT_PATH="/opt/appimages"
+PARENT_PATH="/home/${USER}/appimages"
 
 # Appimage path
 APPIMAGE_PATH="${PARENT_PATH}/wowup-client-latest.appimage"
@@ -20,5 +20,5 @@ URL="https://github.com/WowUp/WowUp.CF/releases/download/v${WOWUP_VERSION}/WowUp
 sudo curl -L -o "${APPIMAGE_PATH}" "${URL}"
 
 # Set permissions
-sudo chown root:root "${APPIMAGE_PATH}"
+sudo chown "${USER}:${USER}" "${APPIMAGE_PATH}"
 sudo chmod 755 "${APPIMAGE_PATH}"

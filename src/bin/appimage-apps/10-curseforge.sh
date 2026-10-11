@@ -4,15 +4,19 @@
 CURSEFORGE_VERSION="latest"
 
 # Parent Path
-PARENT_PATH="/opt/appimages"
+PARENT_PATH="/home/${USER}/appimages"
 
 # Appimage path
 APPIMAGE_PATH="${PARENT_PATH}/curseforge-latest.appimage"
+
+# Icon path
+ICON_PATH="${HOME}/.local/share/icons/hicolor/256x256/apps/curseforge.png"
 
 # Prep parent folder
 if [[ ! -d "${PARENT_PATH}" ]]; then
     mkdir -p "${PARENT_PATH}"
 fi
+mkdir -p "$(dirname "${ICON_PATH}")"
 
 URL="https://curseforge.overwolf.com/downloads/curseforge-${CURSEFORGE_VERSION}-linux.zip"
 
@@ -28,13 +32,17 @@ URL="https://curseforge.overwolf.com/downloads/curseforge-${CURSEFORGE_VERSION}-
     # shellcheck disable=SC2010
     PACKAGE=$(ls | grep 'CurseForge')
     sudo mv "${PACKAGE}" "${APPIMAGE_PATH}"
+    "${APPIMAGE_PATH}" --appimage-extract >/dev/null
+    cp squashfs-root/usr/share/icons/hicolor/256x256/apps/curseforge.png "${ICON_PATH}"
+    rm -rf squashfs-root
     cd /tmp || exit
     rm -rf /tmp/curseforge
 )
 
 # Set permissions
-sudo chown root:root "${APPIMAGE_PATH}"
+sudo chown ${USER}:${USER} "${APPIMAGE_PATH}"
 sudo chmod 755 "${APPIMAGE_PATH}"
+sudo chown "${USER}:${USER}" "${ICON_PATH}"
 
 # Set login auth redirect
 xdg-mime default curseforge.desktop x-scheme-handler/cfauth

@@ -2,7 +2,8 @@
 Name=CurseForge (Wayland)
 Comment=CurseForge Addons
 GenericName=CurseForge
-Exec=/opt/appimages/curseforge-latest.appimage --ozone-platform=wayland --ozone-platform-hint=auto --enable-features=UseOzonePlatform,WaylandWindowDecorations %
+Exec=@HOME@/appimages/curseforge-latest.appimage --ozone-platform=wayland --ozone-platform-hint=auto --enable-features=UseOzonePlatform,WaylandWindowDecorations %U
+Icon=curseforge
 Type=Application
 StartupNotify=false
 StartupWMClass=CurseForge

@@ -4,7 +4,7 @@
 CPU_X_VERSION="5.1.2"
 
 # Parent Path
-PARENT_PATH="/opt/appimages"
+PARENT_PATH="/home/${USER}/appimages"
 
 # Appimage path
 APPIMAGE_PATH="${PARENT_PATH}/cpu-x-latest.appimage"
@@ -20,5 +20,5 @@ URL="https://github.com/TheTumultuousUnicornOfDarkness/CPU-X/releases/download/v
 sudo curl -L -o "${APPIMAGE_PATH}" "${URL}"
 
 # Set permissions
-sudo chown root:root "${APPIMAGE_PATH}"
+sudo chown "${USER}:${USER}" "${APPIMAGE_PATH}"
 sudo chmod 755 "${APPIMAGE_PATH}"
