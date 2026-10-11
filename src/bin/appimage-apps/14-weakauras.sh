@@ -4,7 +4,7 @@
 WEAKAURAS_VERSION="5.2.7"
 
 # Parent Path
-PARENT_PATH="/opt/appimages"
+PARENT_PATH="/home/${USER}/appimages"
 
 # Appimage path
 APPIMAGE_PATH="${PARENT_PATH}/weakauras-client-latest.appimage"
@@ -20,5 +20,18 @@ URL="https://github.com/WeakAuras/WeakAuras-Companion/releases/download/v${WEAKA
 sudo curl -L -o "${APPIMAGE_PATH}" "${URL}"
 
 # Set permissions
-sudo chown root:root "${APPIMAGE_PATH}"
+sudo chown "${USER}:${USER}" "${APPIMAGE_PATH}"
 sudo chmod 755 "${APPIMAGE_PATH}"
+
+APPLICATIONS_PATH="${HOME}/.local/share/applications"
+mkdir -p "${APPLICATIONS_PATH}"
+cat > "${APPLICATIONS_PATH}/weakauras-client.desktop" <<EOF
+[Desktop Entry]
+Name=Weakauras
+Comment=Weakauras Launcher
+GenericName=Weakauras
+Exec=${HOME}/appimages/weakauras-client-latest.appimage
+Type=Application
+StartupNotify=false
+StartupWMClass=Weakauras
+EOF

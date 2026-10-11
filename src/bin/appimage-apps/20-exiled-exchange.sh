@@ -4,7 +4,7 @@
 EXILED_EXCHANGE_VERSION="0.6.2"
 
 # Parent Path
-PARENT_PATH="/opt/appimages"
+PARENT_PATH="/home/${USER}/appimages"
 
 # Appimage path
 APPIMAGE_PATH="${PARENT_PATH}/exiled-exchange-2-latest.appimage"
@@ -20,5 +20,18 @@ URL="https://github.com/Kvan7/Exiled-Exchange-2/releases/download/v${EXILED_EXCH
 sudo curl -L -o "${APPIMAGE_PATH}" "${URL}"
 
 # Set permissions
-sudo chown root:root "${APPIMAGE_PATH}"
+sudo chown "${USER}:${USER}" "${APPIMAGE_PATH}"
 sudo chmod 755 "${APPIMAGE_PATH}"
+
+APPLICATIONS_PATH="${HOME}/.local/share/applications"
+mkdir -p "${APPLICATIONS_PATH}"
+cat > "${APPLICATIONS_PATH}/exiled-exchange.desktop" <<EOF
+[Desktop Entry]
+Name=ExiledExchange
+Comment=Exiled Exchange 2 Client
+GenericName=ExiledExchange
+Exec=${HOME}/appimages/exiled-exchange-2-latest.appimage --no-sandbox
+Type=Application
+StartupNotify=false
+StartupWMClass=ExiledExchange
+EOF

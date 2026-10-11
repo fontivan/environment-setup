@@ -4,7 +4,7 @@
 YUBICO_MANAGER_VERSION="latest"
 
 # Parent Path
-PARENT_PATH="/opt/appimages"
+PARENT_PATH="/home/${USER}/appimages"
 
 # Appimage path
 APPIMAGE_PATH="${PARENT_PATH}/yubico-manager-latest.appimage"
@@ -22,5 +22,18 @@ sudo curl -L \
     "${URL}"
 
 # Set permissions
-sudo chown root:root "${APPIMAGE_PATH}"
+sudo chown "${USER}:${USER}" "${APPIMAGE_PATH}"
 sudo chmod 755 "${APPIMAGE_PATH}"
+
+APPLICATIONS_PATH="${HOME}/.local/share/applications"
+mkdir -p "${APPLICATIONS_PATH}"
+cat > "${APPLICATIONS_PATH}/yubico-manager.desktop" <<EOF
+[Desktop Entry]
+Name=Yubico Manager
+Comment=Yubico Manager
+GenericName=Yubico Manager
+Exec=${HOME}/appimages/yubico-manager-latest.appimage
+Type=Application
+StartupNotify=false
+StartupWMClass=Yubico
+EOF

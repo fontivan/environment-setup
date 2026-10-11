@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=WarcraftLogs
-Comment=Warcraft Logs Client
-GenericName=WarcraftLogs
-Exec=/opt/appimages/warcraftlogs-latest.appimage --no-sandbox
-Type=Application
-StartupNotify=false
-StartupWMClass=WarcraftLogs
