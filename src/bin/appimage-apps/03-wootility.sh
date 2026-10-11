@@ -22,3 +22,16 @@ sudo curl -L -o "${APPIMAGE_PATH}" "${URL}"
 # Set permissions
 sudo chown "${USER}:${USER}" "${APPIMAGE_PATH}"
 sudo chmod 755 "${APPIMAGE_PATH}"
+
+APPLICATIONS_PATH="${HOME}/.local/share/applications"
+mkdir -p "${APPLICATIONS_PATH}"
+cat > "${APPLICATIONS_PATH}/wootility.desktop" <<EOF
+[Desktop Entry]
+Name=Wootility
+Comment=Wootility Launcher
+GenericName=Wootility
+Exec=${HOME}/appimages/wootility-latest.appimage
+Type=Application
+StartupNotify=false
+StartupWMClass=Wootility
+EOF

@@ -39,6 +39,21 @@ URL="https://curseforge.overwolf.com/downloads/curseforge-${CURSEFORGE_VERSION}-
     rm -rf /tmp/curseforge
 )
 
+APPLICATIONS_PATH="${HOME}/.local/share/applications"
+mkdir -p "${APPLICATIONS_PATH}"
+cat > "${APPLICATIONS_PATH}/curseforge-wayland.desktop" <<EOF
+[Desktop Entry]
+Name=CurseForge (Wayland)
+Comment=CurseForge Addons
+GenericName=CurseForge
+Exec=${HOME}/appimages/curseforge-latest.appimage --ozone-platform=wayland --ozone-platform-hint=auto --enable-features=UseOzonePlatform,WaylandWindowDecorations %U
+Icon=curseforge
+Type=Application
+StartupNotify=false
+StartupWMClass=CurseForge
+MimeType=x-scheme-handler/cfauth;
+EOF
+
 # Set permissions
 sudo chown ${USER}:${USER} "${APPIMAGE_PATH}"
 sudo chmod 755 "${APPIMAGE_PATH}"

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Wootility
-Comment=Wootility Launcher
-GenericName=Wootility
-Exec=@HOME@/appimages/wootility-latest.appimage
-Type=Application
-StartupNotify=false
-StartupWMClass=Wootility

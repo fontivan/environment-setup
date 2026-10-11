@@ -22,3 +22,16 @@ sudo curl -L -o "${APPIMAGE_PATH}" "${URL}"
 # Set permissions
 sudo chown "${USER}:${USER}" "${APPIMAGE_PATH}"
 sudo chmod 755 "${APPIMAGE_PATH}"
+
+APPLICATIONS_PATH="${HOME}/.local/share/applications"
+mkdir -p "${APPLICATIONS_PATH}"
+cat > "${APPLICATIONS_PATH}/cpu-x.desktop" <<EOF
+[Desktop Entry]
+Name=CPU-X
+Comment=CPU-X
+GenericName=CPU-X
+Exec=${HOME}/appimages/cpu-x-latest.appimage
+Type=Application
+StartupNotify=false
+StartupWMClass=CPU-X
+EOF

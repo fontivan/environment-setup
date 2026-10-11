@@ -22,3 +22,16 @@ sudo curl -L -o "${APPIMAGE_PATH}" "${URL}"
 # Set permissions
 sudo chown "${USER}:${USER}" "${APPIMAGE_PATH}"
 sudo chmod 755 "${APPIMAGE_PATH}"
+
+APPLICATIONS_PATH="${HOME}/.local/share/applications"
+mkdir -p "${APPLICATIONS_PATH}"
+cat > "${APPLICATIONS_PATH}/exiled-exchange.desktop" <<EOF
+[Desktop Entry]
+Name=ExiledExchange
+Comment=Exiled Exchange 2 Client
+GenericName=ExiledExchange
+Exec=${HOME}/appimages/exiled-exchange-2-latest.appimage --no-sandbox
+Type=Application
+StartupNotify=false
+StartupWMClass=ExiledExchange
+EOF

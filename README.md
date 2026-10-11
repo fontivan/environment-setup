@@ -7,7 +7,7 @@ This handles quite a few things;
 1. Installing extra repositories for fusion (nonfree & free), vscode, insync, flatpak, etc
 2. Install a ton of useful packages (see individual installation scripts for full list)
 3. Install gpu drivers (include wayland suspend workarounds for nvidia)
-4. Install some custom desktop icons for launching applications
+4. Install app-specific desktop launchers and icons with their application installers
 5. Install rnnoise and configure pipewire to create a noise filtered mic
 6. Configure the system hostname
 7. Configure vscode extensions

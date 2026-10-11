@@ -49,3 +49,34 @@ sudo dnf install -y \
     "wine" \
     "zsh" \
     "GConf2"
+
+APPLICATIONS_PATH="${HOME}/.local/share/applications"
+mkdir -p "${APPLICATIONS_PATH}"
+cat > "${APPLICATIONS_PATH}/microsoft-edge-stable-wayland.desktop" <<'EOF'
+[Desktop Entry]
+Name=Microsoft Edge (Wayland)
+Exec=/usr/bin/microsoft-edge-stable --enable-features=UseOzonePlatform --ozone-platform=wayland %U
+Icon=/usr/share/icons/hicolor/128x128/apps/microsoft-edge.png
+Type=Application
+Categories=Network;WebBrowser;
+EOF
+cat > "${APPLICATIONS_PATH}/vscode-wayland.desktop" <<'EOF'
+[Desktop Entry]
+Name=VSCode (Wayland)
+Comment=Code Editing. Redefined.
+GenericName=Text Editor
+Exec=/usr/share/code/code --ozone-platform=wayland --ozone-platform-hint=auto --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebRTCPipeWireCapturer --unity-launch %F
+Icon=vscode
+Type=Application
+StartupNotify=false
+StartupWMClass=Code
+Categories=TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;application/x-code-workspace;
+Actions=new-empty-window;
+Keywords=vscode;
+
+[Desktop Action new-empty-window]
+Name=New Empty Window
+Exec=/usr/share/code/code --ozone-platform=wayland --ozone-platform-hint=auto --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebRTCPipeWireCapturer --new-window %F
+Icon=vscode
+EOF

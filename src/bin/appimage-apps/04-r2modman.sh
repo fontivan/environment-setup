@@ -33,3 +33,16 @@ URL="https://gcdn.thunderstore.io/live/repository/packages/ebkr-r2modman-${RTWOM
 # Set permissions
 sudo chown "${USER}:${USER}" "${APPIMAGE_PATH}"
 sudo chmod 755 "${APPIMAGE_PATH}"
+
+APPLICATIONS_PATH="${HOME}/.local/share/applications"
+mkdir -p "${APPLICATIONS_PATH}"
+cat > "${APPLICATIONS_PATH}/r2modman-launcher.desktop" <<EOF
+[Desktop Entry]
+Name=R2modman
+Comment=R2modman Launcher
+GenericName=R2modman
+Exec=${HOME}/appimages/r2modman-latest.appimage --no-sandbox
+Type=Application
+StartupNotify=false
+StartupWMClass=R2modman
+EOF

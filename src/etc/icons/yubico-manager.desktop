@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Yubico Manager
-Comment=Yubico Manager
-GenericName=Yubico Manager
-Exec=@HOME@/appimages/yubico-manager-latest.appimage
-Type=Application
-StartupNotify=false
-StartupWMClass=Yubico
