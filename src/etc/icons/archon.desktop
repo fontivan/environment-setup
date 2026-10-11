@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Archon
+Comment=Archon Client
+GenericName=Archon
+Exec=@HOME@/appimages/archon-lite-latest.appimage --no-sandbox
+Icon=archon
+Type=Application
+StartupNotify=false
+StartupWMClass=Archon
