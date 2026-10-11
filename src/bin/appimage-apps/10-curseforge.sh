@@ -55,7 +55,7 @@ MimeType=x-scheme-handler/cfauth;
 EOF
 
 # Set permissions
-sudo chown ${USER}:${USER} "${APPIMAGE_PATH}"
+sudo chown "${USER}:${USER}" "${APPIMAGE_PATH}"
 sudo chmod 755 "${APPIMAGE_PATH}"
 sudo chown "${USER}:${USER}" "${ICON_PATH}"
 
