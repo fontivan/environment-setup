@@ -35,6 +35,7 @@ sudo dnf install -y \
     "libgcrypt.x86_64" \
     "libgpg-error.i686" \
     "libxml2.i686" \
+    "lutris" \
     "openldap.i686" \
     "rsnapshot" \
     "rsync" \
