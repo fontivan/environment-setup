@@ -8,7 +8,7 @@ This handles quite a few things;
 2. Install a ton of useful packages (see individual installation scripts for full list)
 3. Install gpu drivers (include wayland suspend workarounds for nvidia)
 4. Install app-specific desktop launchers and icons with their application installers
-5. Install rnnoise and configure pipewire to create a noise filtered mic
+5. Install RNNoise and Yubico Authenticator under `~/.local/opt`; configure PipeWire to create a noise-filtered mic
 6. Configure the system hostname
 7. Configure vscode extensions
 8. Install zsh and shell color theme
