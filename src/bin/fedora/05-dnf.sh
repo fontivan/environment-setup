@@ -36,16 +36,12 @@ sudo dnf install -y \
     "libgpg-error.i686" \
     "libxml2.i686" \
     "openldap.i686" \
-    "qjackctl" \
     "rsnapshot" \
     "rsync" \
     "rust" \
-    "SDL2.i686" \
     "snapd" \
     "sqlite2.i686" \
     "steam" \
-    "tlp" \
-    "util-linux-user" \
     "wine" \
     "zsh" \
     "GConf2"
