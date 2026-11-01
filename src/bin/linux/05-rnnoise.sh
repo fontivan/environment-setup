@@ -1,34 +1,34 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 VERSION="v1.10"
 
 URL="https://github.com/werman/noise-suppression-for-voice/releases/download/${VERSION}/linux-rnnoise.zip"
-TMP_PATH="/tmp/linux-rnnoise"
-RNNOISE_PATH="/opt/linux-rnnoise"
+TMP_PATH=$(mktemp -d)
+RNNOISE_PATH="${HOME}/.local/opt/linux-rnnoise"
+PIPEWIRE_DROPIN_PATH="${HOME}/.config/systemd/user/pipewire.service.d/10-rnnoise.conf"
 
-# Install rnnoise for noise suppression
-(
-    cd /tmp || exit
-    if [[ -d "${TMP_PATH}" ]]; then
-        rm -rf "${TMP_PATH}"
-    fi
-    curl -OL "${URL}"
-    unzip linux-rnnoise.zip
-    if [[ -d "${RNNOISE_PATH}" ]]; then
-        sudo rm -rf "${RNNOISE_PATH}"
-    fi
-    sudo mkdir -p "${RNNOISE_PATH}"
-    sudo cp -R linux-rnnoise/* "${RNNOISE_PATH}"
-    sudo chown root:root "${RNNOISE_PATH}"
-    sudo chmod -R o+r "${RNNOISE_PATH}"
-    rm -f linux-rnnoise.zip
-    rm -rf "${TMP_PATH}"
-)
+trap 'rm -rf -- "${TMP_PATH}"' EXIT
 
-# Create symlink for pipewire 1.6.x
-# https://gitlab.freedesktop.org/pipewire/pipewire/-/commit/8fd798208777f502a3bd86b02b07a24397792f3f
-if [[ ! -d '/usr/lib64/ladspa' ]]; then
-    sudo mkdir -p '/usr/lib64/ladspa'
+curl -fL -o "${TMP_PATH}/linux-rnnoise.zip" "${URL}"
+unzip -q "${TMP_PATH}/linux-rnnoise.zip" -d "${TMP_PATH}"
+
+if [[ ! -f "${TMP_PATH}/linux-rnnoise/ladspa/librnnoise_ladspa.so" ]]; then
+    printf 'RNNoise LADSPA plugin not found in downloaded archive\n' >&2
+    exit 1
 fi
 
-sudo ln -s "${RNNOISE_PATH}/ladspa/librnnoise_ladspa.so" "/usr/lib64/ladspa/librnnoise_ladspa.so"
+mkdir -p "$(dirname "${RNNOISE_PATH}")"
+rm -rf -- "${RNNOISE_PATH}"
+mkdir -p "${RNNOISE_PATH}"
+cp -R "${TMP_PATH}/linux-rnnoise/." "${RNNOISE_PATH}/"
+
+mkdir -p "$(dirname "${PIPEWIRE_DROPIN_PATH}")"
+cat > "${PIPEWIRE_DROPIN_PATH}" <<'EOF'
+[Service]
+Environment="LADSPA_PATH=%h/.local/opt/linux-rnnoise/ladspa:/usr/lib64/ladspa:/usr/lib/ladspa:/usr/local/lib/ladspa"
+EOF
+
+systemctl --user daemon-reload
+systemctl --user restart pipewire.service

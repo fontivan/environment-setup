@@ -1,23 +1,25 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 YUBICO_AUTHENTICATOR_URL="https://developers.yubico.com/yubioath-flutter/Releases/yubico-authenticator-latest-linux.tar.gz"
 
 YUBICO_AUTHENTICATOR="yubico-authenticator"
-TARBALL="${YUBICO_AUTHENTICATOR}.tar.gz"
+YUBICO_AUTHENTICATOR_PATH="${HOME}/.local/opt/${YUBICO_AUTHENTICATOR}"
+TMP_PATH=$(mktemp -d)
 
-(
-    cd /tmp || exit
+trap 'rm -rf -- "${TMP_PATH}"' EXIT
 
-    curl -L -o "${TARBALL}" "${YUBICO_AUTHENTICATOR_URL}"
-    mkdir -p "${YUBICO_AUTHENTICATOR}"
-    tar -xvf "${TARBALL}" --strip-components 1 -C "${YUBICO_AUTHENTICATOR}"
-    rm "${TARBALL}"
+curl -fL -o "${TMP_PATH}/${YUBICO_AUTHENTICATOR}.tar.gz" "${YUBICO_AUTHENTICATOR_URL}"
+mkdir -p "${TMP_PATH}/install"
+tar -xzf "${TMP_PATH}/${YUBICO_AUTHENTICATOR}.tar.gz" \
+    --strip-components 1 -C "${TMP_PATH}/install"
 
-    sudo chown -R root:root "${YUBICO_AUTHENTICATOR}"
-    sudo chmod +rx "/tmp/${YUBICO_AUTHENTICATOR}/desktop_integration.sh"
-    sudo chmod +rx "/tmp/${YUBICO_AUTHENTICATOR}/authenticator"
-    sudo mkdir -p "/opt/${YUBICO_AUTHENTICATOR}"
-    sudo cp -R "/tmp/${YUBICO_AUTHENTICATOR}/*" "/opt/${YUBICO_AUTHENTICATOR}/"
+chmod u+x "${TMP_PATH}/install/desktop_integration.sh"
+chmod u+x "${TMP_PATH}/install/authenticator"
 
-    /opt/${YUBICO_AUTHENTICATOR}/desktop_integration.sh --install
-)
+mkdir -p "$(dirname "${YUBICO_AUTHENTICATOR_PATH}")"
+rm -rf -- "${YUBICO_AUTHENTICATOR_PATH}"
+mv "${TMP_PATH}/install" "${YUBICO_AUTHENTICATOR_PATH}"
+
+"${YUBICO_AUTHENTICATOR_PATH}/desktop_integration.sh" --install
